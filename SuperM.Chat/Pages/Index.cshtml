@@ -2,12 +2,24 @@
 <div class="container">
     <div class="row">&nbsp;</div>
     <div class="row">
-        <div class="col-6">&nbsp;</div>
-        <div class="col-6">
-            User..........<input type="text" id="userInput" />
+        <div style="margin:auto;width:100%;" class="col-6">
+            <span>User:</span>
+            <input type="text" id="userInput" />
             <br />
-            Message...<input type="text" id="messageInput" />
-            <input type="button" id="sendButton" value="Send Message" />
+            <span>ConnectUser：</span>
+            <input type="text" id="connectUser" />
+            <br />
+            <span>Group：</span>
+            <input type="text" id="group" />
+            <br />
+            <span>Message：</span>
+            <input type="text" id="messageInput" />
+        </div>
+        <div style="margin-left:300px;width:100%;">
+            <input type="button" id="loginInButton" value="LoginIn" />
+            <input type="button" id="loginOutButton" value="LoginOut" />
+            <input type="button" id="sendButton" value="Send Message To Group " />
+            <input type="button" id="sendSingleButton" value="Send Message To User " />
         </div>
     </div>
     <div class="row">
