@@ -8,6 +8,7 @@ connection.start().then(function () {
 }).catch(function (err) {
     return console.error(err.toString());
 });
+
 //connection
 connection.on("LoginIn", function (token) {
     current_token = token;
@@ -70,3 +71,8 @@ document.getElementById("sendSingleButton").addEventListener("click", function (
     });
     event.preventDefault();
 });
+
+document.getElementById("stop").addEventListener("click", function (event) {
+    connection.stop();
+});
+
