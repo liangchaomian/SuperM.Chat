@@ -14,6 +14,7 @@ namespace SuperM.Chat.SignarR
                 Online.OnLineUsers = new List<TestUser>();
             testUsers = Online.OnLineUsers;
         }
+        
         #region method
         /// <summary>
         /// LoginIn
@@ -83,6 +84,23 @@ namespace SuperM.Chat.SignarR
             await Clients.Group(groupId).SendAsync("SendSingle", message);
         }
 
+        /// <summary>
+        /// OnConnected
+        /// </summary>
+        /// <returns></returns>
+        public override async Task OnConnectedAsync()
+        {
+            await Clients.Client(Context.ConnectionId).SendAsync("Join", "join");
+        }
+        /// <summary>
+        /// OnDisconnected
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public override async Task OnDisconnectedAsync(Exception exception)
+        {
+            await Clients.Client(Context.ConnectionId).SendAsync("Left", "left");
+        }
 
         #endregion
 

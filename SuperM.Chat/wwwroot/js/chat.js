@@ -10,6 +10,19 @@ connection.start().then(function () {
 });
 
 //connection
+connection.on("Join", function (message) {
+    var encodedMsg = " message: " + message;
+    var li = document.createElement("li");
+    li.textContent = encodedMsg;
+    document.getElementById("messagesList").appendChild(li);
+});
+
+connection.on("Left", function (message) {
+    var encodedMsg = " message: " + message;
+    var li = document.createElement("li");
+    li.textContent = encodedMsg;
+    document.getElementById("messagesList").appendChild(li);
+});
 connection.on("LoginIn", function (token) {
     current_token = token;
     var encodedMsg = " Token: " + token;
